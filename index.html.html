@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Roffecto - Menu</title>
+  <style>
+    :root { --bg: #f5e4c8; --text: #333; --accent: #5b3e1d; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+           margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
+    .container { max-width: 640px; margin: 0 auto; padding: 16px; }
+    .card { background: rgba(255,255,255,0.6); border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .logo { display: block; margin: 12px auto; max-width: 220px; border-radius: 12px; }
+    h1 { font-size: 1.6rem; margin: 8px 0 12px; text-align: center; color: var(--accent); }
+    h2 { font-size: 1.1rem; margin: 14px 0 8px; color: var(--accent); text-align: left; }
+    .grid { display: grid; gap: 10px; }
+    .item { padding: 10px 12px; background: rgba(255,255,255,0.9); border-radius: 10px; }
+    .title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; color: #2d2215; }
+    .desc { font-size: 0.95rem; }
+    footer { text-align: center; font-size: 0.8rem; color: #6b5a46; margin: 12px 0 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Logo Pizzeria Roffecto" class="logo">
+    <div class="card">
+      <h1>Pizzeria Roffecto</h1>
+      <section>
+        <h2>Entrées</h2>
+        <div class="grid">
+          <div class="item">
+            <div class="title">Assortissement de mini pizze fritte</div>
+            <div class="desc">Au plaisir du Chef</div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Pizzas</h2>
+        <div class="grid">
+          <div class="item"><div class="title">Margherita</div><div class="desc">Sauce tomate, huile d'olive, mozzarella, parmesan, basilic (option croûte farcie ricotta)</div></div>
+          <div class="item"><div class="title">Mylène</div><div class="desc">Ricotta au pesto de basilic, courgettes, mozzarella, prosciutto crudo, basilic, pecorino romano</div></div>
+          <div class="item"><div class="title">Fleur & Bonheur</div><div class="desc">Fleurs de courgettes en double consistance, mozzarella de bufflonne, basilic et pecorino</div></div>
+          <div class="item"><div class="title">Brontolona</div><div class="desc">Pesto de pistache de Bronte, mozzarella, prosciutto cotto aux herbes, stracciatella de bufflonne</div></div>
+          <div class="item"><div class="title">Umbriacona</div><div class="desc">Crème d’asperges, mozzarella, guanciale, huile d’olive, basilic à la truffe, copeaux</div></div>
+          <div class="item"><div class="title">Carbonara</div><div class="desc">Carbo-crème, mozzarella, guanciale, pecorino romano</div></div>
+          <div class="item"><div class="title">Parmiggiana</div><div class="desc">Crème de tomate cerise jaunes, mozzarella, aubergines frites, copeaux de parmesan, basilic</div></div>
+          <div class="item"><div class="title">Mezza Luna</div><div class="desc">Calzone ricotta, jambon cru ou cuit, mozzarella, parmesan</div></div>
+        </div>
+      </section>
+      <footer>© Pizzeria Roffecto — Menu mobile</footer>
+    </div>
+  </div>
+</body>
+</html>
