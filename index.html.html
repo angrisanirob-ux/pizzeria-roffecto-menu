@@ -1,54 +1,177 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pizzeria Roffecto - Menu</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pizzeria Roffecto – Menu</title>
+  <meta name="description" content="Menu de la Pizzeria Roffecto: entrées et pizze artisanales." />
   <style>
-    :root { --bg: #f5e4c8; --text: #333; --accent: #5b3e1d; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-           margin: 0; background: var(--bg); color: var(--text); line-height: 1.5; }
-    .container { max-width: 640px; margin: 0 auto; padding: 16px; }
-    .card { background: rgba(255,255,255,0.6); border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-    .logo { display: block; margin: 12px auto; max-width: 220px; border-radius: 12px; }
-    h1 { font-size: 1.6rem; margin: 8px 0 12px; text-align: center; color: var(--accent); }
-    h2 { font-size: 1.1rem; margin: 14px 0 8px; color: var(--accent); text-align: left; }
-    .grid { display: grid; gap: 10px; }
-    .item { padding: 10px 12px; background: rgba(255,255,255,0.9); border-radius: 10px; }
-    .title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; color: #2d2215; }
-    .desc { font-size: 0.95rem; }
-    footer { text-align: center; font-size: 0.8rem; color: #6b5a46; margin: 12px 0 0; }
+    :root{
+      --bg:#fffdf8;
+      --card:#ffffff;
+      --ink:#1f1f1f;
+      --muted:#5c5c5c;
+      --accent:#cc2f2f;           /* accento caldo, sottile */
+      --divider:#eee7db;
+      --radius:18px;
+      --maxw:960px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);}
+    body{font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto}
+
+    /* Header con logo */
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter:saturate(1.2) blur(6px);
+      background:rgba(255,253,248,.85);
+      border-bottom:1px solid var(--divider);
+    }
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:18px 20px;}
+    .brand{display:flex; align-items:center; gap:14px}
+    .brand img{width:64px;height:64px; object-fit:contain}
+    .title{font-size:1.6rem; letter-spacing:.3px; font-weight:700}
+
+    /* Contenuto */
+    main{max-width:var(--maxw); margin:28px auto 60px; padding:0 20px;}
+    .intro{
+      background:var(--card);
+      border:1px solid var(--divider);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .intro:before{
+      content:""; width:8px; height:8px; border-radius:999px; background:var(--accent);
+      box-shadow:0 0 0 6px rgba(204,47,47,.13);
+    }
+    .grid{
+      display:grid; gap:20px; margin-top:20px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width:860px){
+      .grid{ grid-template-columns: 1fr 1fr; }
+    }
+    section{
+      background:var(--card);
+      border:1px solid var(--divider);
+      border-radius:var(--radius);
+      padding:22px;
+    }
+    h2{
+      margin:0 0 12px 0; font-size:1.3rem; letter-spacing:.2px;
+      display:flex; align-items:center; gap:10px;
+    }
+    h2 span.rule{
+      flex:1; height:1px; background:linear-gradient(90deg,var(--accent),transparent);
+      opacity:.25;
+    }
+
+    /* Voci menu */
+    .item{padding:12px 0; border-top:1px dashed rgba(0,0,0,.06)}
+    .item:first-child{border-top:0}
+    .name{
+      font-size:1.05rem; font-weight:700; letter-spacing:.2px;
+    }
+    .desc{
+      margin-top:4px; color:var(--muted); font-size:.95rem;
+    }
+
+    /* Footer */
+    footer{
+      text-align:center; color:var(--muted);
+      padding:30px 16px 60px; font-size:.9rem;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="Logo Pizzeria Roffecto" class="logo">
-    <div class="card">
-      <h1>Pizzeria Roffecto</h1>
-      <section>
-        <h2>Entrées</h2>
-        <div class="grid">
-          <div class="item">
-            <div class="title">Assortissement de mini pizze fritte</div>
-            <div class="desc">Au plaisir du Chef</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2>Pizzas</h2>
-        <div class="grid">
-          <div class="item"><div class="title">Margherita</div><div class="desc">Sauce tomate, huile d'olive, mozzarella, parmesan, basilic (option croûte farcie ricotta)</div></div>
-          <div class="item"><div class="title">Mylène</div><div class="desc">Ricotta au pesto de basilic, courgettes, mozzarella, prosciutto crudo, basilic, pecorino romano</div></div>
-          <div class="item"><div class="title">Fleur & Bonheur</div><div class="desc">Fleurs de courgettes en double consistance, mozzarella de bufflonne, basilic et pecorino</div></div>
-          <div class="item"><div class="title">Brontolona</div><div class="desc">Pesto de pistache de Bronte, mozzarella, prosciutto cotto aux herbes, stracciatella de bufflonne</div></div>
-          <div class="item"><div class="title">Umbriacona</div><div class="desc">Crème d’asperges, mozzarella, guanciale, huile d’olive, basilic à la truffe, copeaux</div></div>
-          <div class="item"><div class="title">Carbonara</div><div class="desc">Carbo-crème, mozzarella, guanciale, pecorino romano</div></div>
-          <div class="item"><div class="title">Parmiggiana</div><div class="desc">Crème de tomate cerise jaunes, mozzarella, aubergines frites, copeaux de parmesan, basilic</div></div>
-          <div class="item"><div class="title">Mezza Luna</div><div class="desc">Calzone ricotta, jambon cru ou cuit, mozzarella, parmesan</div></div>
-        </div>
-      </section>
-      <footer>© Pizzeria Roffecto — Menu mobile</footer>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <!-- Sostituisci src se il tuo logo ha un percorso/nome differente -->
+        <img src="./logo.png" alt="Logo Pizzeria Roffecto">
+        <div class="title">Pizzeria Roffecto</div>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <main>
+    <div class="intro">
+      Menu maison – impasto a lunga maturazione, ingredienti selezionati. Buon appetito!
+    </div>
+
+    <div class="grid">
+      <!-- ENTRÉES -->
+      <section aria-labelledby="entrees">
+        <h2 id="entrees">Entrées <span class="rule"></span></h2>
+
+        <div class="item">
+          <div class="name">Assortissement de mini pizze fritte</div>
+          <div class="desc">Au plaisir du Chef</div>
+        </div>
+      </section>
+
+      <!-- PIZZE -->
+      <section aria-labelledby="pizze">
+        <h2 id="pizze">Pizze <span class="rule"></span></h2>
+
+        <div class="item">
+          <div class="name">Margherita</div>
+          <div class="desc">Sauce tomate, Huile extra vierge d’olive, Mozzarella, parmesan, basilic. <em>(Option possible avec croute farcie de ricotta fraiche)</em></div>
+        </div>
+
+        <div class="item">
+          <div class="name">Mylène</div>
+          <div class="desc">Ricotta au pesto de basilic, courgettes, mozzarella, Huile extra vierge d’olive, prosciutto crudo, basilic et copeaux de pecorino romano.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Fleur &amp; Bonheur</div>
+          <div class="desc">Fleurs de courgettes en double consistance, mozzarella de bufflonne, basilic et pecorino.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Maradona</div>
+          <div class="desc">Mozzarella, saucisse de Savoie, cimes de râpe (friarielli).</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Brontolona</div>
+          <div class="desc">Pesto de pistache de Bronte*, mozzarella, Prosciutto cotto aux herbes et stracciatella de buflonne.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Tartufona</div>
+          <div class="desc">Crème d’asperges, Mozzarella, Guanciale, huile extra vierge d’olive à la truffe, basilic et copeaux de parmesain.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Carbonara</div>
+          <div class="desc">Carbo-creme, mozzarella, guanciale di Norcia, pecorino romano.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Belle au bois dormant</div>
+          <div class="desc">Crema di parmiggiano, Girolles, Gorgonzola doux, mozzarella de bouflonne, basilic.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Parmigiana 2.0</div>
+          <div class="desc">Tomates confites, mozzarella, aubergines frittes, copeaux de parmesan et basilic.</div>
+        </div>
+
+        <div class="item">
+          <div class="name">Mezza Luna</div>
+          <div class="desc">Calzone ricotta, jambon cruit ou cru, mozzarella, parmesan.</div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © Pizzeria Roffecto — Menu
+  </footer>
 </body>
 </html>
